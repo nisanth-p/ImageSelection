@@ -1,0 +1,328 @@
+{
+  "mqtt": {
+    "enable": true
+  },
+  "screens": {
+    "splash": {
+      "next_page": "splash_to_login",
+      "properties": {
+        "color": {
+          "primary_color": "",
+          "secondary_color": "",
+          "enable": false
+        },
+        "image": {
+          "background_image": "",
+          "enable": false
+        }
+      },
+      "fields": {
+        "image_view": {
+          "app_logo": {
+            "url": "",
+            "enable": false
+          }
+        },
+        "text_view": {
+          "header": {
+            "text": "Image Selection",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        },
+        "button_view": {}
+      },
+      "previous_page": "finish"
+    },
+    "signin": {
+      "next_page": "signin_to_home",
+      "properties": {
+        "color": {
+          "primary_color": "",
+          "secondary_color": "",
+          "enable": false
+        },
+        "image": {
+          "background_image": "",
+          "enable": false
+        }
+      },
+      "fields": {
+        "image_view": {
+          "wifi_icon": {
+            "url": "",
+            "enable": true
+          }
+        },
+        "text_view": {
+          "header": {
+            "text": "SignIn",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          },
+          "user": {
+            "text": "Enter Mail Id",
+            "helper_text": "abc@example.com",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          },
+          "mobile_number": {
+            "text": "Mobile Number",
+            "helper_text": "with or without country code use digits(0-9) only",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          },
+          "password": {
+            "text": "Enter Password",
+            "helper_text": "use 0-9,special symbols(!@$*..),letters(A-Z,a-z)",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        },
+        "button_view": {
+          "login": {
+            "text": "Login",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        }
+      },
+      "previous_page": "signin_to_home"
+    },
+    "image_selection": {
+      "next_page": "image_selection_to_image_list",
+      "properties": {
+        "color": {
+          "primary_color": "",
+          "secondary_color": "",
+          "enable": false
+        },
+        "image": {
+          "background_image": "",
+          "enable": false
+        }
+      },
+      "fields": {
+        "image_view": {
+          "back_arrow": {
+            "color": "",
+            "url": "",
+            "enable": true
+          }
+        },
+        "text_view": {
+          "header": {
+            "text": "Tittle",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          },
+          "description": {
+            "clickable_page": "otp_screen_to_signin",
+            "text": "Change MailId?",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        },
+        "button_view": {
+          "submit": {
+            "text": "Submit",
+            "enable": true,
+            "color": "",
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        },
+        "view": {
+
+        }
+      },
+      "previous_page": "image_selection_to_login"
+    },
+    "image_list": {
+      "next_page": "image_list_to_image_list",
+      "properties": {
+        "color": {
+          "primary_color": "",
+          "secondary_color": "",
+          "enable": false
+        },
+        "image": {
+          "background_image": "",
+          "enable": false
+        }
+      },
+      "fields": {
+        "image_view": {
+          "back_arrow": {
+            "color": "",
+            "url": "",
+            "enable": true
+          }
+        },
+        "text_view": {
+          "header": {
+            "text": "ImageList",
+            "enable": true,
+            "right_icon": {
+              "url": "",
+              "color": "",
+              "enable": true
+            },
+            "left_icon": {
+              "url": "",
+              "color": "",
+              "enable": false
+            },
+            "validation": {
+              "enable": false
+            }
+          }
+        },
+        "button_view": {
+
+        },
+        "view": {
+
+        }
+      },
+      "previous_page": "image_list_to_image_list"
+    }
+  },
+  "app_settings": {
+    "languages": {
+      "1": {
+        "text": "Tamil",
+        "locale": "ta",
+        "enable": true
+      },
+      "2": {
+        "text": "English",
+        "locale": "en",
+        "enable": true
+      },
+      "count": 2,
+      "enable": false
+    },
+    "app_theme": {
+      "style": {
+        "type": 1,
+        "primary_color": "",
+        "secondary_color": "",
+        "enable": false
+      },
+      "color": {
+        "primary_color": "",
+        "secondary_color": "",
+        "enable": false
+      },
+      "enable": false
+    }
+  }
+}
