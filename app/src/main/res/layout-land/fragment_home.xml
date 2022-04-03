@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".view.ui.home.HomeFragment">
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/TIL_tittle"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -13,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginStart="30dp"
         android:layout_marginTop="32dp"
-        android:layout_marginEnd="30dp"
+        android:hint="Tittle"
         android:maxWidth="488dp"
         android:minWidth="88dp"
         app:boxCornerRadiusBottomEnd="4dp"
@@ -22,11 +23,10 @@
         app:boxCornerRadiusTopStart="4dp"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/_perc_80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:startIconDrawable="@drawable/ic_baseline_home_work_24"
-        android:hint="Tittle">
+        app:startIconDrawable="@drawable/ic_baseline_home_work_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TIE_tittle"
@@ -57,11 +57,10 @@
         app:boxCornerRadiusTopStart="4dp"
         app:endIconMode="clear_text"
         app:errorEnabled="true"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/_perc_80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TIL_tittle"
-        app:startIconDrawable="@drawable/ic_outline_article_24"
-      >
+        app:startIconDrawable="@drawable/ic_outline_article_24">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/TIE_description"
@@ -85,13 +84,13 @@
         android:layout_marginEnd="30dp"
         android:backgroundTint="#DFDBDB"
         android:contentDescription="@string/app_name"
-        app:iconTintMode="multiply"
-        app:icon="@drawable/ic_outline_image_24"
-        app:cornerRadius="16dp"
-        android:textAlignment="textStart"
         android:text="Choose Image"
+        android:textAlignment="textStart"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_outline_image_24"
+        app:iconTintMode="multiply"
+        app:layout_constraintEnd_toEndOf="@id/_perc_80"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TIL_description" />
 
@@ -105,23 +104,42 @@
         android:layout_marginEnd="30dp"
         android:backgroundTint="@color/black"
         android:contentDescription="@string/app_name"
-        app:iconTintMode="multiply"
-        app:icon="@drawable/ic_baseline_save_as_24"
-        app:cornerRadius="16dp"
         android:text="Submit"
-        app:iconGravity="end"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:cornerRadius="16dp"
+        app:icon="@drawable/ic_baseline_save_as_24"
+        app:iconGravity="end"
+        app:iconTintMode="multiply"
+        app:layout_constraintEnd_toStartOf="@id/_perc_80"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BT_select_image" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/FP_choose_camera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:src="@drawable/ic_baseline_camera_24"
         android:backgroundTint="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/ic_baseline_camera_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="@+id/_perc_80" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/_perc_80"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.79"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="TIL_description,TIL_tittle,BT_select_image,BT_select_image" />
 </androidx.constraintlayout.widget.ConstraintLayout>

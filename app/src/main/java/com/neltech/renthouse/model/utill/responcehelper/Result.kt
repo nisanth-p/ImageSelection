@@ -1,4 +1,4 @@
-package com.neltech.renthouse.model.utill
+package com.neltech.renthouse.model.utill.responcehelper
 
 sealed class Result<out R> {
 

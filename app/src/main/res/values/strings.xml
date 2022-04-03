@@ -6,4 +6,5 @@
     <string name="capture">capture</string>
     <string name="photo_view">photo view</string>
     <string name="choose_camera">choose camera</string>
+    <string name="camera">camera</string>
 </resources>

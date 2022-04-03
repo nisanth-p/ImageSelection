@@ -19,6 +19,9 @@
         <argument
             android:name="root_directory"
             app:argType="string" />
+        <action
+            android:id="@+id/action_homeFragment_to_showImagesFragment"
+            app:destination="@id/showImagesFragment" />
     </fragment>
     <fragment
         android:id="@+id/imageSelectionFragment"
@@ -31,5 +34,17 @@
         <action
             android:id="@+id/action_imageSelectionFragment_self"
             app:destination="@id/imageSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/showImagesFragment"
+        android:name="com.neltech.renthouse.view.ui.show.ShowImagesFragment"
+        android:label="show_images_fragment"
+        tools:layout="@layout/show_images_fragment" >
+        <action
+            android:id="@+id/action_showImagesFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_showImagesFragment_self"
+            app:destination="@id/showImagesFragment" />
     </fragment>
 </navigation>

@@ -16,15 +16,17 @@
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/drawable/ic_baseline_save_as_24.xml" value="0.1585" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/drawable/ic_outline_article_24.xml" value="0.1585" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/drawable/ic_outline_image_24.xml" value="0.1585" />
+        <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/drawable/progress_image.xml" value="0.158" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout-land/activity_main.xml" value="0.24414414414414415" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout-land/camera_ui_container.xml" value="0.22" />
-        <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout-land/fragment_home.xml" value="0.24414414414414415" />
+        <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout-land/fragment_home.xml" value="0.22" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout-land/fragment_image_selection.xml" value="0.24414414414414415" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/activity_main.xml" value="0.14114583333333333" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/camera_ui_container.xml" value="0.25729166666666664" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/fragment_image_selection.xml" value="0.25885416666666666" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/fragment_login.xml" value="0.27291666666666664" />
+        <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/progressbar_layout.xml" value="0.1484375" />
         <entry key="..\:/AndroidWorkspace/TestWorkspace/RentHouse/app/src/main/res/layout/show_images_fragment.xml" value="0.1484375" />
       </map>
     </option>

@@ -17,7 +17,7 @@ class RemoteDataStoreImpl
     }
 
     override suspend fun getImages(options: Map<String, String>): Response<AppScriptResponse>? {
-        TODO("Not yet implemented")
+       return remote.getImages(options)
     }
 
 }

@@ -9,6 +9,7 @@ import androidx.fragment.app.viewModels
 import com.neltech.renthouse.R
 import com.neltech.renthouse.databinding.FragmentHomeBinding
 import com.neltech.renthouse.model.utill.IPref
+import com.neltech.renthouse.model.utill.responcehelper.Status
 import com.neltech.renthouse.view.base.BaseFragment
 import com.neltech.renthouse.view.base.BaseViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -19,6 +20,7 @@ import kotlinx.coroutines.Job
 import javax.inject.Inject
 import kotlin.coroutines.CoroutineContext
 
+private const val TAG = "HomeFragment"
 @DelicateCoroutinesApi
 @AndroidEntryPoint
 class HomeFragment :BaseFragment<FragmentHomeBinding>(), CoroutineScope {
@@ -55,6 +57,25 @@ val map:HashMap<String,String> = hashMapOf()
             map["action"] = "insert"
             Log.d("TAG", "setup: $map    ${sharedPref.str("IMAGE")}")
             viewModel.uploadImage(map)
+        }
+        bindViews()
+    }
+
+    private fun bindViews() {
+        viewModel.res.observe(this) {
+            when (it.status) {
+                Status.SUCCESS -> {
+                    Log.d(TAG, "bindViews: SUCCESS")
+                    nav(R.id.action_homeFragment_to_showImagesFragment)
+                }
+                Status.LOADING -> {
+                    Log.d(TAG, "bindViews: LOADING")
+                }
+                Status.ERROR -> {
+                    Log.d(TAG, "bindViews: ERROR")
+                    nav(R.id.action_homeFragment_to_showImagesFragment)
+                }
+            }
         }
     }
 

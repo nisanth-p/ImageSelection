@@ -29,6 +29,7 @@ import androidx.navigation.Navigation
 import androidx.window.layout.WindowMetrics
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
+import com.google.android.material.imageview.ShapeableImageView
 import com.neltech.renthouse.R
 import com.neltech.renthouse.databinding.CameraUiContainerBinding
 import com.neltech.renthouse.databinding.FragmentImageSelectionBinding
@@ -91,7 +92,7 @@ class ImageSelectionFragment : BaseFragment<FragmentImageSelectionBinding>(), Co
     }
     val ANIMATION_FAST_MILLIS = 50L
     val ANIMATION_SLOW_MILLIS = 100L
-    fun ImageButton.simulateClick(delay: Long = ANIMATION_FAST_MILLIS) {
+    fun ShapeableImageView.simulateClick(delay: Long = ANIMATION_FAST_MILLIS) {
         performClick()
         isPressed = true
         invalidate()
