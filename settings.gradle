@@ -14,6 +14,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "RentHouse"
 include ':app'
-include ':domain'
-include ':data'
-include ':errorinfo'

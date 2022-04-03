@@ -10,6 +10,7 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
+import androidx.camera.core.ImageCapture
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.fragment.NavHostFragment
@@ -18,6 +19,8 @@ import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
 import com.neltech.renthouse.R
 import kotlinx.coroutines.DelicateCoroutinesApi
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
 
 private const val TAG = "@@BaseActivity"
 @DelicateCoroutinesApi
@@ -29,7 +32,8 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
     val _sharedModel get() = sharedModel
     private var _binding: ViewBinding? = null
     abstract val bindingInflater: (LayoutInflater) -> VB
-
+    private var imageCapture: ImageCapture? = null
+    private lateinit var cameraExecutor: ExecutorService
     @Suppress("UNCHECKED_CAST")
     protected val binding: VB
         get() = _binding as VB
@@ -45,13 +49,14 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         _binding = bindingInflater.invoke(layoutInflater)
         setContentView(requireNotNull(_binding).root)
         createNavControl()
+        cameraExecutor = Executors.newSingleThreadExecutor()
         setup()
     }
 
-    protected fun findNavHostFragment() = supportFragmentManager.findFragmentById(R.id.nav_host_fragments) as? NavHostFragment
+    protected fun findNavHostFragment() = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as? NavHostFragment
     private fun createNavControl() {
         navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragments) as NavHostFragment
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.findNavController()
     }
 
@@ -64,6 +69,7 @@ abstract class BaseActivity<VB : ViewBinding> : AppCompatActivity() {
         super.onDestroy()
         Log.i(TAG, "onDestroy: ")
         _binding = null
+        cameraExecutor.shutdown()
     }
 
 

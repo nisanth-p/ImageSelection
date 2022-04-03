@@ -1,8 +1,9 @@
 package com.neltech.domain.usecases
 
-import com.neltech.domain.common.NetworkHelper
-import com.neltech.domain.repositories.ImageRepository
+import com.neltech.renthouse.model.utill.NetworkHelper
+import com.neltech.renthouse.model.db.repository.ImageRepository
 import javax.inject.Inject
 
-class ImageUploadUseCase @Inject constructor(private val imageRepository: ImageRepository,
-                                             private val networkHelper: NetworkHelper){}
+class ImageUploadUseCase @Inject constructor(private val imageRepository: com.neltech.renthouse.model.db.repository.ImageRepository,
+                                             private val networkHelper: com.neltech.renthouse.model.utill.NetworkHelper
+){}

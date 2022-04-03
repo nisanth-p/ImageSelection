@@ -2,4 +2,8 @@
     <string name="app_name">RentHouse</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="camera_switch">camera switch</string>
+    <string name="capture">capture</string>
+    <string name="photo_view">photo view</string>
+    <string name="choose_camera">choose camera</string>
 </resources>

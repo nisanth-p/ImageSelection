@@ -2,7 +2,7 @@ package com.neltech.renthouse.view.base
 
 import android.util.Log
 import androidx.lifecycle.*
-import com.neltech.domain.common.NetworkHelper
+import com.neltech.renthouse.model.utill.NetworkHelper
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.DelicateCoroutinesApi
 import javax.inject.Inject
@@ -12,6 +12,7 @@ private const val TAG = "BaseViewModel"
 @HiltViewModel
 open class BaseViewModel @Inject constructor(private val networkHelper: NetworkHelper) :
     ViewModel(), DefaultLifecycleObserver {
+    var image_uri: MutableLiveData<String> =MutableLiveData<String>()
     override fun onStart(owner: LifecycleOwner) {
         super.onStart(owner)
         Log.i(TAG, "onStart: LifecycleOwner")

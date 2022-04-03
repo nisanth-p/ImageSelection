@@ -1,26 +1,30 @@
 package com.neltech.renthouse.view.base
 
-import android.content.ContextWrapper
+import android.Manifest
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.addCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.fragment.app.viewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
-import com.neltech.domain.common.NetworkHelper
 import com.neltech.renthouse.R
+import com.neltech.renthouse.databinding.FragmentHomeBinding
+import com.neltech.renthouse.model.utill.NetworkHelper
 import kotlinx.coroutines.DelicateCoroutinesApi
 import javax.inject.Inject
 
-private const val TAG = "@@BaseFragment"
+
+private const val TAG = "BaseFragment"
 @DelicateCoroutinesApi
 abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
@@ -47,7 +51,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        observer = BaseLifecycleObserver(requireActivity().activityResultRegistry, networkHelper)
+        observer = BaseLifecycleObserver(requireActivity(),requireActivity().activityResultRegistry, networkHelper)
         lifecycle.addObserver(observer)
 
     }
@@ -59,6 +63,7 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     ): View? {
         _binding = bindingInflater.invoke(inflater, container, false)
         createNavControl()
+
         return requireNotNull(_binding).root
     }
 
@@ -68,12 +73,16 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     }
 
 
+
     private fun createNavControl() {
-        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragments)
+        navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment)
     }
 
-    fun takeImage() {
-        observer.selectImage()
+    fun takeImage(func:(file:Any)->Any) {
+
+        observer.selectImage(){
+            Log.d(TAG, "takeImage: $it")
+            func(it)}
     }
 
 
@@ -107,8 +116,9 @@ abstract class BaseFragment<VB : ViewBinding> : Fragment() {
     }
 
     override fun onDestroyView() {
-        super.onDestroyView()
         _binding = null
+        super.onDestroyView()
+
     }
 
 }
